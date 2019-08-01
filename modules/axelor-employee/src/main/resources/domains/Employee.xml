@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.1.xsd">
+
+	<module package="com.axelor.contact.db" name="contact"/>
+
+	<entity name="Employee">
+		<string name="empName" title="EmpName"/>
+		<one-to-one ref="com.axelor.contact.db.Email" name="email" title="Email"/>
+		<one-to-many name="contact" ref="com.axelor.contact.db.Contact" title="Contact" mappedBy="employee"/>
+		<many-to-many name="vehicles" ref="com.axelor.contact.db.Vehicle" title="Vehicles"/>
+	</entity>
+</domain-models>
